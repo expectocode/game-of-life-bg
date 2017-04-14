@@ -7,33 +7,6 @@ parser.add_argument(
             '-i', '--input-rle',
             help='The RLE string you want to decode.')
 
-gli = parser.parse_args().input_rle
-
-#tuplist = []
-#for yindex,line in enumerate(gli.split("$")):
-#    lastmult=-100
-#    for index,x in enumerate(line):
-#        if x.isdigit() and not line[index+1].isdigit():
-#            if lastmult == index: #this is 2nd digit
-#                print(int(line[index-2:index])*line[index+1],end='')
-#                tuplist.extend([(index+th,yindex) for th in range(int(x))])
-#            else:
-#                lastmult = index
-#                print(int(x)*line[index+1],end='')
-#                tuplist.extend([(index+th,yindex) for th in range(int(x))])
-#        elif x.isdigit() and line[index+1].isdigit():
-#            lastmult = index + 1
-#            continue
-#        elif index - lastmult != 1:
-#            if x == 'o':
-#                print(x,end='')
-#                tuplist.append((index,yindex))
-#            else:
-#                print(" ",end='')
-#
-#    print("")
-#
-#print(tuplist)
 def run_length_decode(rle):
 
     ''' Expand the series of run-length encoded characters.
@@ -60,7 +33,7 @@ def run_length_decode(rle):
 
             run = ''
 
-instr = gli
+instr = parser.parse_args().input_rle
 outstr= ""
 tups = []
 for x in run_length_decode(instr):
