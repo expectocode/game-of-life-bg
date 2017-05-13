@@ -56,20 +56,23 @@ DEAD = (44, 62, 80) #RGB
 ALIVE = (224, 224, 224) #RGB
 
 def main():
-    #gen1_alivecells = trans(copperhead,85-6,48-4,)
-    #gen1_alivecells = trans(gospergun,round(width/2)-17,round(height/2)-4)
+    #gen1_alivecells = trans(p.copperhead,85-6,48-4,)
+    #gun,middle
+    #gen1_alivecells = trans(p.gospergun,round(width/2)-17,round(height/2)-4)
+    #gun
+    #gen1_alivecells = trans(p.gospergun,3,3)
     #race
-    #gen1_alivecells = rotate(trans(weekender,round(width/2)-9,60),90) + trans(x_flip(lwss),round(width/2)-2,40) + trans(copperhead,round(width/2)-6,20)
+    #gen1_alivecells = rotate(trans(p.weekender,round(width/2)-9,60),90) + trans(x_flip(p.lwss),round(width/2)-2,40) + trans(p.copperhead,round(width/2)-6,20)
     #gen1_alivecells = rotate(trans(p.weekender,round(width/2)-9,52),90) + trans(x_flip(p.lwss),round(width/2)-2,32)
-    #gen1_alivecells = trans(x_flip(lwss),round(width/2)-2,round(height/2)-2-20) + trans(copperhead,round(width/2)-6,round(width/2)-4-30)
+    gen1_alivecells = trans(x_flip(p.lwss),round(width/2)-2,round(height/2)-2-20) + trans(p.copperhead,round(width/2)-6,round(width/2)-4-30)
     #gen1_alivecells = trans(p.shick,round(width/2)-10,round(height/2)-4)
     #gen1_alivecells = rotate(trans(b52,round(width/2)-20,round(height/2)-10),90)
-    gen1_alivecells = trans(p.blinkership1,round(width/2)-11,round(height/2)-6)
+    #gen1_alivecells = trans(p.blinkership1,round(width/2)-11,round(height/2)-6)
     #glider formation
     #gen1_alivecells = []
     #for x in range(5):
     #    for y in range(5):
-    #        gen1_alivecells.extend(trans(glider,60+10*x,30+6*y))
+    #        gen1_alivecells.extend(trans(p.glider,62+9*x,32+6*y))
 
     #main loop
     while True:
@@ -100,7 +103,7 @@ def main():
         #there's also https://linux.die.net/man/1/xloadimage
         #but i trust /tmp the most to actually do what i want it to
         im2.save('/tmp/gol.png')
-        sleep(0.05)
+        sleep(1)
         sub.run(['feh', '--bg-fill', '/tmp/gol.png'],stdout=sub.PIPE,stderr=sub.PIPE)
 
 if __name__ == "__main__":
